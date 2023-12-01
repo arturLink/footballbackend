@@ -23,7 +23,7 @@ namespace footballbackend.Controllers
             return players;
         }
 
-        [HttpPost]
+        [HttpPost("add")]
         public List<Player> PostPerson([FromBody] Player person)
         {
             _context.Players.Add(person);

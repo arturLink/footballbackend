@@ -21,5 +21,12 @@ namespace footballbackend.Controllers
             var teams = _context.Teams.ToList();
             return teams;
         }
+        [HttpPost("addTeam")]
+        public List<Team> PostTeam([FromBody] Team team)
+        {
+            _context.Teams.Add(team);
+            _context.SaveChanges();
+            return _context.Teams.ToList();
+        }
     }
 }
